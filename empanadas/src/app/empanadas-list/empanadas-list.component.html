@@ -10,26 +10,25 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><img [src]="empanada.imagen" [alt]="empanada.nombre"></td>
-            <td>{{empanada.nombre}}</td>
-            <td>{{empanada.descripcion}}</td>
-            <td>{{empanada.precio}}</td>
-            <td>{{empanada.stock}}</td>
-        </tr>
-        <tr>
-            <td><img [src]="empanada.imagen" [alt]="empanada.nombre"></td>
-            <td>Pollo</td>
-            <td>Pollo, condimentos, crema</td>
-            <td>$900</td>
-            <td>180</td>
-        </tr>
-        <tr>
-            <td><img [src]="empanada.imagen" [alt]="empanada.nombre"></td>
-            <td>Verdura</td>
-            <td>Acelga, cebolla, morron</td>
-            <td>$800</td>
-            <td>150</td>
-        </tr>
+        @for(empanada of empanadas; track empanada.nombre){
+            <tr [ngClass]="{'novedad': empanada.novedad}">
+                <td><img [src]="empanada.imagen" [alt]="empanada.nombre"></td>
+                <td>{{empanada.nombre}}</td>
+                <td>{{empanada.descripcion}}</td>
+                <td>{{empanada.precio | currency}}</td>
+                @if(empanada.stock>0){
+                    <td>{{empanada.stock}}</td>
+                }
+               @else {
+                   <td><span class="badge text-bg-danger">SIN STOCK</span></td>
+               }
+            </tr>
+        }
+        @empty {
+            <tr>
+                <td *colspan="4">No hay empanadas</td>
+            </tr>
+        }
+      
     </tbody>
 </table>
