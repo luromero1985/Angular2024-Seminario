@@ -5,4 +5,5 @@ export interface Empanada{
     stock:number;
     imagen:string;
     novedad: boolean;
+    cantidad:number;
 }
