@@ -1,4 +1,4 @@
-<h2>¿Qué vas a elegir?</h2>
+<h3>Nuestras variedades</h3>
 <table class="table table-success table-striped">
     <thead class="text-center">
         <tr>
@@ -7,6 +7,7 @@
             <th>Detalle</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th class="colMayor">Cantidad</th>
             <th class="colMayor">Comprar</th>
         </tr>
     </thead>
@@ -18,22 +19,18 @@
                 <td>{{empanada.descripcion}}</td>
                 <td>{{empanada.precio | currency}}</td>
                 @if(empanada.stock>0){
-                    <td>{{empanada.stock}}</td>
+                    <td></td>
                 }
                @else {
                    <td><span class="badge text-bg-danger">SIN STOCK</span></td>
                }
                <td>
-                <div>
-                    <input type="text" 
-                [(ngModel)]="empanada.cantidad"
-                (keydown)="validateInput($event)"
-                (keyup)="cambiaCantidad($event,empanada)" class="text-center">
-            </div>
-                <div>
-                    <button class="btn btn-secondary btn-sm" (click)="menosCantidad(empanada)">-</button>
-                     <button class="btn btn-secondary btn-sm" (click)="masCantidad(empanada)">+</button></div>
-                </td>
+                <app-input-integer [(cantidad)]= "empanada.cantidad" [max]="empanada.stock" (MaxReached)="maxReached($event)"></app-input-integer>
+               </td>  
+                <td>
+                  <button class="btn btn-success btn-secondary" (click)="agregarAlCarrito(empanada)">Comprar</button> 
+                </td>     
+           
             </tr>
         }
         @empty {

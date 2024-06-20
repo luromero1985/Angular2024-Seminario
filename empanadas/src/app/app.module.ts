@@ -5,11 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmpanadasListComponent } from './empanadas-list/empanadas-list.component';
 import { FormsModule } from '@angular/forms';
+import { WowEmpanadasComponent } from './wow-empanadas/wow-empanadas.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { WowNosotrosComponent } from './wow-nosotros/wow-nosotros.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmpanadasListComponent
+    EmpanadasListComponent,
+    WowEmpanadasComponent,
+    CarritoComponent,
+    WowNosotrosComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,

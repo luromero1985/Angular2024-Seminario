@@ -7,21 +7,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Quienes somos</a>
-        <a class="nav-link" href="#">Empanadas</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/']">Carta</a>
+        <a class="nav-link" [routerLink]="['/nosotros']">Quienes somos</a>
+    
       </div>
     </div>
   </div>
 </nav>
-<h2>wow!</h2>
 <div class="container">
-  <div class="row">
-    <div class="col-8">
-      <app-empanadas-list></app-empanadas-list>
-      </div>
-    <div class="col-4">carrito de compra</div>
-  </div>
+<router-outlet></router-outlet>
+
 </div>
 
 <footer>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Empanada } from './Empanada';
+import { EmpanadaCarritoService } from '../empanada-carrito.service';
 
 
 @Component({
@@ -7,7 +8,10 @@ import { Empanada } from './Empanada';
   templateUrl: './empanadas-list.component.html',
   styleUrl: './empanadas-list.component.scss'
 })
+
+
 export class EmpanadasListComponent implements OnInit {
+
 empanadas: Empanada[] = [
   {
   nombre:"Carne",
@@ -46,52 +50,19 @@ empanadas: Empanada[] = [
   cantidad:0,
 },
 ]
-constructor(){}
+  
+
+constructor(private carrito: EmpanadaCarritoService){}
 ngOnInit():void{}
 
-masCantidad(empanada: Empanada):void{
-  if(empanada.cantidad<empanada.stock){
-  empanada.cantidad++;
-}
-}
-
-menosCantidad(empanada: Empanada):void{
-  if(empanada.cantidad>0){
-  empanada.cantidad--;
-}
+agregarAlCarrito(empanada: Empanada): void{
+  this.carrito.agregarAlCarrito(empanada);
+  empanada.stock-=empanada.cantidad;
+  empanada.cantidad=0;
 }
 
-cambiaCantidad(event:any, empanada: Empanada):void{
+maxReached(m: String){
+  alert(m);
+}
 
-  const inputElement = event.target as HTMLInputElement;
-    const newValue = inputElement.value;
-
-    // Verificar si el valor es numérico
-    if (/^\d+$/.test(newValue)) {
-      let numericValue = parseInt(newValue, 10);
-
-      // Verificar si está dentro del rango permitido
-      if (numericValue >= 0 && numericValue <= empanada.stock) {
-        empanada.cantidad = numericValue;
-      } else if (numericValue > empanada.stock) {
-        empanada.cantidad = empanada.stock;
-        inputElement.value = empanada.stock.toString();
-      } else {
-        empanada.cantidad = 0;
-        inputElement.value = '0';
-      }
-    } else {
-      // Si no es numérico, revertir al valor anterior
-      inputElement.value = empanada.cantidad.toString();
-    }
-  }
-
-  validateInput(event: KeyboardEvent): void {
-    const allowedKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Tab', 'Delete'];
-    const isNumberKey = /^[0-9]$/;
-
-    if (!isNumberKey.test(event.key) && !allowedKeys.includes(event.key)) {
-      event.preventDefault();
-    }
-  }
 }
