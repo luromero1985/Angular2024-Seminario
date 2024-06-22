@@ -15,6 +15,7 @@ export class EmpanadaCarritoService {
 
   agregarAlCarrito(empanada: Empanada) {
     let item =this._listaCarrito.find((v1)=>v1.nombre==empanada.nombre);
+    
     if(!item){
     this._listaCarrito.push({...empanada});
     }

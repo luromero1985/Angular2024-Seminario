@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Empanada } from './Empanada';
 import { EmpanadaCarritoService } from '../empanada-carrito.service';
+import { EmpanadaDataService } from '../empanada-data.service';
 
 
 @Component({
@@ -12,48 +13,14 @@ import { EmpanadaCarritoService } from '../empanada-carrito.service';
 
 export class EmpanadasListComponent implements OnInit {
 
-empanadas: Empanada[] = [
-  {
-  nombre:"Carne",
-  descripcion: "Carne vacuna, cebolla, morrón, aceituna, condimentos. Cocida frita",
-  precio: 900,
-  stock:180,
-  imagen:"assets/img/carne.jpeg",
-  novedad: false,
-  cantidad:0,
-},
-{
-  nombre:"Pollo",
-  descripcion: "Carne vacuna, cebolla, morrón, aceituna, condimentos. Cocida frita",
-  precio: 800,
-  stock:0,
-  imagen:"assets/img/carne.jpeg",
-  novedad: false,
-  cantidad:0,
-},
-{
-  nombre:"Calavaza",
-  descripcion: "Carne vacuna, cebolla, morrón, aceituna, condimentos. Cocida frita",
-  precio: 900,
-  stock:100,
-  imagen:"assets/img/carne.jpeg",
-  novedad: true,
-  cantidad:0,
-},
-{
-  nombre:"Morron",
-  descripcion: "Carne vacuna, cebolla, morrón, aceituna, condimentos. Cocida frita",
-  precio: 900,
-  stock:50,
-  imagen:"assets/img/carne.jpeg",
-  novedad: false,
-  cantidad:0,
-},
-]
-  
+empanadas: Empanada[] = [];  
 
-constructor(private carrito: EmpanadaCarritoService){}
-ngOnInit():void{}
+constructor(private carrito: EmpanadaCarritoService, private empanadaDataService: EmpanadaDataService){
+
+}
+ngOnInit():void{
+  this.empanadaDataService.getAll().subscribe(empanadas=> this.empanadas= empanadas);
+}
 
 agregarAlCarrito(empanada: Empanada): void{
   this.carrito.agregarAlCarrito(empanada);

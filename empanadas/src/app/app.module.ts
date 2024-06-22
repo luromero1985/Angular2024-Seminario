@@ -9,6 +9,7 @@ import { WowEmpanadasComponent } from './wow-empanadas/wow-empanadas.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { WowNosotrosComponent } from './wow-nosotros/wow-nosotros.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,11 +21,14 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     WowNosotrosComponent,
     InputIntegerComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
