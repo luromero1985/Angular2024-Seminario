@@ -13,13 +13,16 @@ import { EmpanadaDataService } from '../empanada-data.service';
 
 export class EmpanadasListComponent implements OnInit {
 
-empanadas: Empanada[] = [];  
+empanadas: Empanada[]=[];  
 
 constructor(private carrito: EmpanadaCarritoService, private empanadaDataService: EmpanadaDataService){
 
 }
 ngOnInit():void{
-  this.empanadaDataService.getAll().subscribe(empanadas=> this.empanadas= empanadas);
+  this.empanadaDataService.getAll().subscribe((empanadas:Empanada[])=> {
+    this.empanadas=[];
+    this.empanadas= empanadas}
+  );
 }
 
 agregarAlCarrito(empanada: Empanada): void{

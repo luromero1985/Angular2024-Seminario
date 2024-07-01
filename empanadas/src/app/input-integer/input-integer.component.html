@@ -1,10 +1,12 @@
 <div>
-    <input type="text"
-[(ngModel)]="cantidad"
-(keydown)="validateInput($event)"
-(keyup)="cambiaCantidad($event)" class="text-center">
+    <input type="text" [(ngModel)]="cantidad" (keydown)="validateInput($event)" (keyup)="cambiaCantidad($event)"
+        class="text-center">
 </div>
 <div>
-    <button class="btn btn-secondary btn-sm"  (click)="menosCantidad()">-</button>
-     <button class="btn btn-secondary btn-sm" (click)="masCantidad()">+</button></div>
-
+    <button class="btn btn-secondary btn-sm" (click)="menosCantidad()">
+        <p>-</p>
+    </button>
+    <button class="btn btn-secondary btn-sm" (click)="masCantidad()">
+        <p>+</p>
+    </button>
+</div>

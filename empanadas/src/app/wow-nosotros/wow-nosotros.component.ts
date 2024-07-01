@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './wow-nosotros.component.scss'
 })
 export class WowNosotrosComponent {
-
+  email: string = 'wowquericoempanadas@gmail.com';
 }
 
 
