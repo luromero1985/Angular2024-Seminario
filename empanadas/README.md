@@ -3,7 +3,7 @@ Este es un proyecto del seminario ANGULAR 2024. El cual consta en generar una ap
 
 ## La Carta. Empanadas
 
-La aplicación web desarrollada simula la carga y comprra de empanadas.
+La aplicación web desarrollada simula la carga y comprra de empanadas mediante una página web.
 
 
 ## Herramientas y tecnologías
@@ -19,7 +19,6 @@ La aplicación web desarrollada simula la carga y comprra de empanadas.
 ## Estudiante
 * Romero, Luciana Yael
 * 31708286
-* luromero@alumnos.exa.unicen.edu.arImagen de perfil
 * luromero@alumnos.exa.unicen.edu.ar
 * Sede Tandil
 
