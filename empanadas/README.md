@@ -1,5 +1,5 @@
 # Proyecto
-Este es un proyecto del seminario ANGULAR 2024. El cual consta en generar una aplicación web, SPA, usando el framework Angular y lenguaje TypeScript.
+El siguiente es un proyecto del seminario ANGULAR 2024. El cual consta en generar una aplicación web, SPA, usando el framework Angular y lenguaje TypeScript.
 
 
 ## Estudiante
@@ -9,12 +9,12 @@ Este es un proyecto del seminario ANGULAR 2024. El cual consta en generar una ap
 * Sede Tandil
 
 ## Docentes
-Franco Stramana
-Agustín Groh (invitado)
-Ariel Monteserin
-Juan Toloza
-Javier Dottori (invitado)
-Juan Valacco (Invitado)
+* Franco Stramana
+* Agustín Groh (invitado)
+* Ariel Monteserin
+* Juan Toloza
+* Javier Dottori (invitado)
+* Juan Valacco (Invitado)
 
 
 ## La Carta. Empanadas
