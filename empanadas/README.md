@@ -21,9 +21,9 @@ El siguiente es un proyecto del seminario ANGULAR 2024. El cual consta en genera
 
 La aplicación web desarrollada, simula la carga y compra de empanadas mediante una página web. 
 
-Se puede seleccionar de una lista de empanadas, la cantidad deseada de cada variedad (dentro del stock disponible) La elección se puede hacer en forma manual, ingresando el valor desde un input o manipulando una a una las cantidades con dos botones, uno que suma y otro que resta. Una vez seleccionada la cantidad deseada, otro botón permite enviar al carrito la cantidad seleccionada por cada tipo de empanada. 
+Se puede seleccionar de una lista de empanadas, la cantidad deseada de cada variedad (dentro del stock disponible). La elección se puede hacer en forma manual, ingresando el valor desde un input o manipulando una a una las cantidades con dos botones, uno que suma y otro que resta. Una vez seleccionada la cantidad deseada, otro botón permite enviar al carrito la cantidad seleccionada por cada tipo de empanada. 
 
-Por otro lado, contamos con el carrito, desde el cual se puede eliminar la cantidad de empanadas que se había seleccionado, de a una, con un botón quitar. Una vez, decidida la compra, se puede efectuar la misma desde el botón comprar, que envía al usuario a una nueva pñagina en la que se detalla en un ticket la compra realizada. En esta página aparece un botón que envía al usuario al inicio de la página, para que pueda efectuar una nueva compra.
+Por otro lado, contamos con el carrito, desde el cual se puede eliminar la cantidad de empanadas que se había seleccionado, de a una, con un botón quitar. Una vez, decidida la compra, se puede efectuar la misma desde el botón comprar, que envía al usuario a una nueva página en la que se detalla en un ticket la compra realizada. En esta página aparece un botón que envía al usuario al inicio de la página, para que pueda efectuar una nueva compra.
 
 La página también cuenta con una sección de contacto, donde aparece información de contacto, a la que se puede llegar desde la barra de navegación.
 
