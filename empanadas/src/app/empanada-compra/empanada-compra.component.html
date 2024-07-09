@@ -1,0 +1,32 @@
+<div class="ticket">
+    <h1>Wow! quiero...</h1>
+    <div>
+        <h3>¡Compra realizada con éxito!</h3>
+    </div>
+
+
+    <div class="detalleCompra">
+        <p>Detalle de la compra:</p>
+        @if(empanadas.length > 0){
+        <ul>
+            @for(empanada of empanadas; track empanada.nombre){
+            <li>
+                <p>
+                    <span>{{ empanada.nombre }}</span>, cantidad: {{ empanada.cantidad }} - Precio Unidad: {{
+                    empanada.precio |
+                    currency}} - Precio por cantidad: {{ empanada.cantidad * empanada.precio |
+                    currency }}
+                </p>
+
+            </li>
+            }
+        </ul>
+        }
+    </div>
+    <div class="total">
+        <p><span>Total: {{totalPrecio | currency}}</span></p>
+    </div>
+
+
+    <button class="btn btn-success btn-secondary" (click)="volver()">Volver</button>
+</div>

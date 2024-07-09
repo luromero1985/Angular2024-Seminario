@@ -10,6 +10,8 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { WowNosotrosComponent } from './wow-nosotros/wow-nosotros.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EmpanadaCompraComponent } from './empanada-compra/empanada-compra.component';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     WowEmpanadasComponent,
     CarritoComponent,
     WowNosotrosComponent,
-    InputIntegerComponent
+    InputIntegerComponent,
+    EmpanadaCompraComponent
   ],
 
   imports: [

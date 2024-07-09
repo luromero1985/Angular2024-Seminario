@@ -12,7 +12,7 @@ import { EmpanadaDataService } from '../empanada-data.service';
 
 
 export class EmpanadasListComponent implements OnInit {
-
+//vamos a trabajar con una lista de empanadas
 empanadas: Empanada[]=[];  
 
 constructor(private carrito: EmpanadaCarritoService, private empanadaDataService: EmpanadaDataService){

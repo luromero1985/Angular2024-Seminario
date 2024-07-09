@@ -1,46 +1,48 @@
-<h3>Nuestras variedades</h3>
-<table class="table table-success table-striped">
-    <thead class="text-center">
-        <tr>
-            <th class="colMayor"></th>
-            <th><p>Variedad</p></th>
-            <th><p>Detalle</p></th>
-            <th><p>Precio</p></th>
-            <th><p>Stock</p></th>
-            <th class="colMayor"><p>Cantidad</p></th>
-            <th class="colMayor"><p>Comprar</p></th>
-        </tr>
-    </thead>
-    <tbody>
-        @for(empanada of empanadas; track empanada.nombre){
-        <tr [ngClass]="{'novedad': empanada.novedad}">
-            <td><img class="imgLista" [src]="empanada.imagen" [alt]="empanada.nombre"></td>
-            <td>{{empanada.nombre}}</td>
-            <td>{{empanada.descripcion}}</td>
-            <td>{{empanada.precio | currency}}</td>
-            @if(empanada.stock>0){
-            <td></td>
+<div>
+    <h3>Nuestras variedades</h3>
+    <table class="table table-success table-striped">
+        <thead class="text-center">
+            <tr>
+                <th class="colMayor"></th>
+                <th><p>Variedad</p></th>
+                <th><p>Detalle</p></th>
+                <th><p>Precio</p></th>
+                <th><p>Stock</p></th>
+                <th class="colMayor"><p>Cantidad</p></th>
+                <th class="colMayor"><p>Comprar</p></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(empanada of empanadas; track empanada.nombre){
+            <tr [ngClass]="{'novedad': empanada.novedad}">
+                <td><img class="imgLista" [src]="empanada.imagen" [alt]="empanada.nombre"></td>
+                <td>{{empanada.nombre}}</td>
+                <td>{{empanada.descripcion}}</td>
+                <td>{{empanada.precio | currency}}</td>
+                @if(empanada.stock>0){
+                <td></td>
+                }
+                @else {
+                <td><span class="badge text-bg-danger"><p>SIN STOCK</p></span></td>
+                }
+                <td>
+                    <app-input-integer [(cantidad)]="empanada.cantidad" [max]="empanada.stock"
+                        (MaxReached)="maxReached($event)"></app-input-integer>
+                </td>
+                <td>
+    
+                    <button class="btn btn-success btn-secondary" [disabled]="empanada.cantidad === 0" (click)="agregarAlCarrito(empanada)"><p>Agregar</p></button>
+    
+                </td>
+    
+            </tr>
             }
-            @else {
-            <td><span class="badge text-bg-danger"><p>SIN STOCK</p></span></td>
+            @empty {
+            <tr>
+                <td *attr.colspan="4"><p>Lo sentimos, en este momento no podemos ofrecerle nuestros productos</p></td>
+            </tr>
             }
-            <td>
-                <app-input-integer [(cantidad)]="empanada.cantidad" [max]="empanada.stock"
-                    (MaxReached)="maxReached($event)"></app-input-integer>
-            </td>
-            <td>
-
-                <button class="btn btn-success btn-secondary" [disabled]="empanada.cantidad === 0" (click)="agregarAlCarrito(empanada)"><p>Agregar</p></button>
-
-            </td>
-
-        </tr>
-        }
-        @empty {
-        <tr>
-            <td *attr.colspan="4"><p>Lo sentimos, en este momento no podemos ofrecerle nuestros productos</p></td>
-        </tr>
-        }
-
-    </tbody>
-</table>
+    
+        </tbody>
+    </table>
+</div>

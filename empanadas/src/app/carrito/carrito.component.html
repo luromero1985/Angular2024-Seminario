@@ -1,21 +1,38 @@
-<h3>Carrito de compra</h3>
+<div>
+    <h3>Carrito de compra</h3>
 
-  <div class="carritoCompra text-center">
-    <ul class="itemCarrito">
-        <li *ngFor="let empanadaCarrito of (listaCarrito$ | async)">
-            <p>{{empanadaCarrito.nombre}} - Cantidad: {{empanadaCarrito.cantidad}} </p>
-        </li>
-    </ul>
-<div class="total text-center">
-    <div *ngIf="totalEmpanadas === 0">
-        <p>No hay empanadas en el carrito</p>
-        <img src="/assets/img/empanadalogo.jpeg" alt="logo">
+    <div class="carritoCompra text-center">
+        @for(empanadaCarrito of (listaCarrito$ | async); track empanadaCarrito.nombre){
+        <ul class="itemCarrito">
+            <li>
+                <p>{{empanadaCarrito.nombre}} - Cantidad: {{empanadaCarrito.cantidad}} </p>
+                <button (click)="quitarEmpanada(empanadaCarrito)">quitar</button>
+            </li>
+
+        </ul>
+        }
+
+
+
+        <div class="total text-center">
+            @if(totalEmpanadas===0){
+            <div>
+                <p>No hay empanadas en el carrito</p>
+                <img src="/assets/img/empanadalogo.jpeg" alt="logo">
+            </div>
+            }
+            @else {
+            <p>Cantidad total: {{totalEmpanadas}}, <span>precio: {{totalPrecio |
+                    currency}}</span> </p>
+            }
+        </div>
+
+        <td class="btnCompra">
+            @if(totalEmpanadas>0){
+            <button class="btn btn-success btn-secondary comprar" (click)="comprar()">
+                <p>Comprar</p>
+            </button>
+            }
+        </td>
     </div>
-    
-    <p *ngIf="totalEmpanadas > 0">Cantidad total: {{totalEmpanadas}}, <span>precio: {{totalPrecio | currency}}</span> </p>
-  
-</div>  
 </div>
-
-
-

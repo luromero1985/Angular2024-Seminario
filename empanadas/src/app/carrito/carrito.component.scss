@@ -1,49 +1,83 @@
-.carritoCompra{
+.carritoCompra {
     background-color: #198764;
     border-radius: 6px;
-    height:700px;
+    height: 850px;
     color: rgb(6, 4, 44);
-    padding: 10px;
+    padding:3px;
 
 }
 
-.itemCarrito{
-  
-    list-style-type:none;
+.itemCarrito {
+    list-style-type: none;
 }
 
-.itemCarrito li{
-    margin-bottom: 20px; 
-    padding: 0; 
+.itemCarrito li {
+
     background-color: #d1e7dd;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.itemCarrito li p{
-color: #346c3e;
+.itemCarrito li p {
+    color: #346c3e;
+
 }
-p{
-    text-transform:uppercase;
-    font-size: 16px;
+
+
+
+p {
+    text-transform: uppercase;
+    font-size: 14px;
     font-weight: bold;
     font-stretch: expanded;
-    margin-bottom: 10px;
+
 }
 
 
 
-.total{
+.total {
     background-color: bisque;
     border: 2px solid olive;
     border-radius: 6px;
     margin-top: 20px;
 }
 
-span{
+span {
     color: #346c3e;
 }
 
-img{
+img {
     border-radius: 30px;
-filter: opacity(0.3);
-width: 20%;
+    filter: opacity(0.3);
+    width: 20%;
+}
+
+
+button {
+    width: 80px;
+    height: 35px;
+    border-radius: 6px;
+    color: #346c3e;
+    padding: 5px;
+
+
+}
+
+.btnCompra {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px; 
+}
+
+
+.comprar{
+    background-color: red;
+    color: #d1e7dd;
+}
+
+div h3{
+    text-align: center;
 }

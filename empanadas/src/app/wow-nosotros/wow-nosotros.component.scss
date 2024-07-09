@@ -6,25 +6,8 @@ td>img{
 .table{
     width: 80%;
     margin-top: 5%;
-    margin-bottom: 12%;
+    margin-bottom: 11%;
 }
-
-
-
-h3{
-    color: rgb(80, 184, 149);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-    size: 14px;
-}
-
-
-h1{
-    letter-spacing: 1px;
-    color: rgb(130, 161, 161);
-}
-
 
 
 
@@ -37,8 +20,15 @@ p{
 }
 
 div{
-  
-    margin-top: 5%;
-    margin-bottom: 1%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    text-align: center; 
+  justify-content: center;
 
+}
+
+h3 span{
+    color:rgb(130, 161, 161);
 }
